@@ -4,11 +4,11 @@ public class Main {
 
     //Methods for Task 1
     public static void leapYear(int year) {
-        if (year % 4 == 0) {
+        if (year % 4 == 0 && year >= 1584) { // Согласно условиям задачи високосный год начинается с 1584
             printLeapYear(year);
-        } else if (year % 100 == 0) {
+        } else if (year % 100 == 0 && year >= 1584) {
             printNotLeapYear(year);
-        } else if (year % 400 == 0) {
+        } else if (year % 400 == 0 && year >= 1584) {
             printLeapYear(year);
         } else {
             printNotLeapYear(year);
@@ -88,7 +88,7 @@ public class Main {
 
         //Task 1
         System.out.println("\nЗадание №1:");
-        int year = LocalDate.now().getYear(); // Проверял и с другими годами, работает
+        int year = LocalDate.now().getYear(); // Проверял и с другими годами в том числе 100 и 400, работает
         leapYear(year); //Method for Task 1
 
 
